@@ -10,6 +10,8 @@
 #define ResetOnes 8
 #define ResetTens 9
 
+
+
 int OnesVal = 0;
 int TensVal = 0;
 int TotalVal = 0;
@@ -26,6 +28,9 @@ void incrementCount(){
         digitalWrite(ResetOnes, LOW);
         OnesVal = 0;
         if(TensVal != 9){
+            digitalWrite(Tens, HIGH);
+            delay(10);
+            digitalWrite(Tens, LOW);
             TensVal++;
         } else {
             digitalWrite(ResetTens, HIGH);
