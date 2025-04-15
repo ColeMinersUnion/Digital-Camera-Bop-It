@@ -8,7 +8,6 @@ int16_t last_ax = 0, last_ay = 0, last_az = 0;
 
 void setup() {
   Wire.begin(); // I2C as master
-  Serial.begin(9600);
 
   Wire.beginTransmission(MPU_ADDR);
   Wire.write(0x6B); 
