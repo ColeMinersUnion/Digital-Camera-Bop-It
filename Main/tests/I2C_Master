@@ -1,0 +1,14 @@
+#include <Wire.h>
+
+void setup() {
+  Wire.begin(); // I2C as master
+}
+
+void loop() {
+  for (byte i = 0; i < 100; i++) {
+    Wire.beginTransmission(0x08); // Match slave address
+    Wire.write(i); // Send number
+    Wire.endTransmission();
+    delay(500);
+  }
+}
